@@ -3,7 +3,7 @@
     <!-- First Name -->
     <div class="form-group">
         <label>First Name</label>
-        <input type="text" class="form-control" formControlName="firstName" />
+        <input type="text" class="form-control" id="firstName" formControlName="firstName" />
         <div
           *ngIf="submitted && registerForm.controls.firstName.errors"
           class="invalid-feedback"
@@ -17,7 +17,7 @@
     <!-- Last Name -->
     <label>Last Name</label>
     <div class="form-group">
-        <input type="text" class="form-control" formControlName="lastName" />
+        <input type="text" class="form-control" id="lastName" formControlName="lastName" />
         <div
           *ngIf="submitted && registerForm.controls.lastName.errors"
           class="invalid-feedback"
@@ -31,7 +31,7 @@
     <!-- Phone -->
     <div class="form-group">
         <label>Phone Number</label>
-        <input type="text" class="form-control" formControlName="phoneNumber" />
+        <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" />
         <div *ngIf="submitted && registerForm.controls.phoneNumber.errors" class="invalid-feedback">
             <div *ngIf="registerForm.controls.phoneNumber.errors.required">
               Phone number is required
@@ -45,9 +45,9 @@
     <!-- Country -->
     <div class="form-group">
         <label>Country</label>
-        <select formControlName="country" class="select">
+        <select id="country" formControlName="country" class="select">
             <option value="">Select</option>
-            <option *ngFor="let country of countries" value="country.id">{{ country.name }}</option>
+            <option *ngFor="let country of countries">{{ country.name }}</option>
         </select>
         <div
           *ngIf="submitted && registerForm.controls.country.errors"

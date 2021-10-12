@@ -1,7 +1,9 @@
 <div class="form-container">
     <div class="form-group">
         <label>Enter Temp</label>
+        <!-- Temperature input -->
         <input type="text" class="form-control" [(ngModel)]="temp" />
+        <div *ngIf="tempRangeAlert">Temperature should be between 0 and 150 degree Celcius</div>
     </div>
     <div class="form-group">
         <button type="button" (click)="insertTemp()">Check</button>

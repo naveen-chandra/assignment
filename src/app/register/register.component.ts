@@ -10,8 +10,10 @@ import { CommonService } from '../services/common.service';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+  // regx for number input only
   numberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   submitted = false;
+  // list of countries json
   countries: any;
 
   constructor(
@@ -34,10 +36,11 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  // Submit
   onSubmit(): void {
     this.submitted = true;
     if (this.registerForm.valid) {
-      const reqData = this.registerForm.value;
+      const reqData = this.registerForm.value; 
       this.commonService.register(reqData).subscribe(
         res => {
           alert('User registered Successfully');
