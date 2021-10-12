@@ -8,7 +8,6 @@ export class TempTracker {
 
     constructor(temps: number[]) {
         this.insert(temps);
-        console.log(temps);
     }
 
     // Insert
@@ -36,9 +35,7 @@ export class TempTracker {
         this.temps.forEach(item => {
             sum += +item;
         });
-        console.log(sum);
         const len = this.temps.length;
-        console.log(len);
         this.mean = (sum / len).toFixed(2);
     }
 
