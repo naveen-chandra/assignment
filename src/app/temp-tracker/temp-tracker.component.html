@@ -1,0 +1,30 @@
+<div class="form-container">
+    <div class="form-group">
+        <label>Enter Temp</label>
+        <input type="text" class="form-control" [(ngModel)]="temp" />
+    </div>
+    <div class="form-group">
+        <button type="button" (click)="insertTemp()">Check</button>
+    </div>
+</div>
+
+<div>Data set</div>
+<span *ngFor="let temp of temps">{{ temp + ','}}</span>
+
+<table border="1" *ngIf="tempTracker">
+
+    <tr>
+        <th>Max</th>
+        <th>Min</th>
+        <th>Mean</th>
+        <th>Mode</th>
+    </tr>
+
+    <tr>
+        <td>{{ tempTracker.max + '&#8451;'}}</td>
+        <td>{{ tempTracker.min + '&#8451;'}}</td>
+        <td>{{ tempTracker.mean + '&#8451;'}}</td>
+        <td>{{ tempTracker.mode + '&#8451;'}}</td>
+    </tr>
+
+</table>
